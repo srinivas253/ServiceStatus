@@ -13,11 +13,11 @@
     </header>
     <main>
       
-      <button>
+     <!-- <button>
   <div id="region-us" class="region-us">US</div>
   <div class="pipe">|</div>
   <div id="region-eu" class="region-eu">EU</div>
-</button>
+</button>-->
       <p id="id-time">Last update 2mins ago</p>
     
         <button id="subscribe-button">
@@ -36,24 +36,34 @@
           <thead>
             <tr>
               <th>Service Name</th>
-              <th>Status</th>
+              <th>US</th>
+              <th>EU</th>
             </tr>
           </thead>
           <tbody id="status-table">
             <tr>
               <td>UserSite</td>
-              <td id="status-usersite" class="status-outage">Operational</td>
+              <td id="status-usersite" class="status-ok">Operational</td>
+              <td class="status-ok">Operational</td>
             </tr>
             <tr>
               <td>DAST</td>
               <td class="status-error">Outage</td>
+              <td class="status-ok">Operational</td>
             </tr>
             <tr>
               <td>SAST</td>
               <td class="status-warning">Maintenance</td>
+              <td class="status-ok">Operational</td>
             </tr>
             <tr>
               <td>PSS</td>
+              <td class="status-ok">Operational</td>
+              <td class="status-ok">Operational</td>
+            </tr>
+            <tr>
+              <td>IAST</td>
+              <td class="status-ok">Operational</td>
               <td class="status-ok">Operational</td>
             </tr>
           </tbody>
@@ -129,7 +139,7 @@ const euRegion = document.getElementById("region-eu");
       statusUsersite.textContext = data.status;
       statusUsersite.className = 'status-ok';
     }else{
-      statusUsersite.textContext = "Outage";
+      statusUsersite.textContext = "status-ok";
       statusUsersite.className = 'status-error';
     }
     });
